@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<script>
+			
+				// build the array for the game.
+				var iMax = 2;
+				var jMax = 8;
+				var f = new Array();
+				for (i=0; i<iMax; i++){
+					f[i]=new Array();
+					for (j=0; j<jMax; j++){
+						f[i][j] = 0;
+					}
+				}
+				
+				//functions
+				function reveal(int blockrow, int blockcol){
+					//will print the number assigned to the given block to test FillBoard().  but will need to think of a change for tracking which blocks have been revealed.
+				}
+					//create an array of pairs "[1,1,2,2,3,3,4,4]" and randomly assign them to positions in f.
+				function FillBoard(f){
+				
+				}
+			</script>
+			<style>
+				#container {
+					width: 900px;
+					height: 500px;
+					border: 2px solid gray;
+					position: absolute;
+					left: 100px;
+					top: 100px;
+				}
+				#Block {
+					width: 170px;
+					height: 170px;
+					border: 2px solid gray;
+					background-color:  Darkgray;
+					margin: 10px auto;
+					float: left;
+				}
+				#row {
+					width: 800px;
+					height: 200px;
+					border: 2px solid gray;
+					float: inherit;
+				}
+				body {
+					background-color: Aquamarine;
+				}
+			</style>
+	
+		</head>
+		<body>
+			<p>This is a meomory matching game.  click on 2 of the squares, if they match you'll get a point and they'll stay revealed.  if not they'll cover up again and you'll get a strike,  3 strikes and it's game over!</p>
+			<div id="container">
+			<!-- creating divs for the game board -->
+				<div id="row">
+					<div id="Block" onclick="reveal(0,0)">
+				
+					</div>
+					<div id="Block" onclick="reveal(0,1)">
+					
+					</div>
+					<div id="Block" onclick="reveal(0,2)">
+				
+					</div>
+					<div id="Block" onclick="reveal(0,3)">
+				
+					</div>
+				</div>
+				<div id="row">
+					<div id="Block" onclick="reveal(1,0)">
+				
+					</div>
+					<div id="Block" onclick="reveal(1,1)">
+				
+					</div>
+					<div id="Block" onclick="reveal(1,2)">
+				
+					</div>
+					<div id="Block" onclick="reveal(1,3)">
+				
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>
