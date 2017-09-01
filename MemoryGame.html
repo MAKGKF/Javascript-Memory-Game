@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<script>
-			
-				// build the array for the game.
-				var iMax = 2;
-				var jMax = 8;
-				var f = new Array();
-				for (i=0; i<iMax; i++){
-					f[i]=new Array();
-					for (j=0; j<jMax; j++){
-						f[i][j] = 0;
-					}
-				}
-				
-				//functions
-				function reveal(int blockrow, int blockcol){
-					//will print the number assigned to the given block to test FillBoard().  but will need to think of a change for tracking which blocks have been revealed.
-				}
-					//create an array of pairs "[1,1,2,2,3,3,4,4]" and randomly assign them to positions in f.
-				function FillBoard(f){
-				
-				}
-			</script>
 			<style>
 				#container {
 					width: 900px;
@@ -57,8 +35,8 @@
 			<div id="container">
 			<!-- creating divs for the game board -->
 				<div id="row">
-					<div id="Block" onclick="reveal(0,0)">
-				
+					<div id="Block">
+						<button onclick="reveal(0,0)">reveal</button>
 					</div>
 					<div id="Block" onclick="reveal(0,1)">
 					
@@ -85,5 +63,33 @@
 					</div>
 				</div>
 			</div>
+			<script>
+			
+					//create an array of pairs "[1,1,2,2,3,3,4,4]" and randomly assign them to positions in f.
+				var contents = [1,1,2,2,3,3,4,4];
+				// create a 2X4 martix
+				var boardMatrix = new Array(4);
+				for (var i = 0; i < 2; i++){
+					boardMatrix[i] = new SubArray(2);
+				}	
+				FillBoard();
+				//functions				
+				function FillBoard(){
+					for (var j = 0; j < 7; j++){
+						var newSpot = Math.floor((Math.random()*7));
+						for (var m = 0; m < 4; m++){
+							for (var n = 0; n < 2; n++){
+								boardMatrix[m][n] = contents[newSpot];
+							}
+						} 
+					}	
+				}
+
+				function reveal(int blockrow, int blockcol){
+					//will print the number assigned to the given block to test FillBoard().  but will need to think of a change for tracking which blocks have been revealed.
+					document.write(boardMatrix[blockrow][blockcol]);
+				}
+
+			</script>
 		</body>
 	</html>
